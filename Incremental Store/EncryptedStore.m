@@ -170,7 +170,6 @@ static NSString * const EncryptedStoreMetadataTableName = @"meta";
                                 [condition objectForKey:@"query"],
                                 [ordering objectForKey:@"order"],
                                 limit];
-            NSLog(string);
 
             sqlite3_stmt *statement = [self preparedStatementForQuery:string];
             [self bindWhereClause:condition toStatement:statement];
