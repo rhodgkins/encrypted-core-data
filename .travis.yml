@@ -11,7 +11,6 @@ script:
     - popd
     - cd exampleProjects/IncrementalStore
     # 32-bit tests
-    - xctool -sdk iphonesimulator -scheme "Incremental Store Demo" clean test -destination "name=iPhone 5"
+    - xcodebuild -sdk iphonesimulator -scheme "Incremental Store Demo" clean test -destination "name=iPhone 5"
     # 64-bit tests
-    - xctool -sdk iphonesimulator -scheme "Incremental Store Demo" clean test -destination "name=iPhone 5s"
-    - xctool -sdk iphonesimulator -scheme "Incremental Store Demo" clean test -destination "name=iPhone 5s"
+    - xcodebuild -sdk iphonesimulator -scheme "Incremental Store Demo" clean test -destination "name=iPhone 5s"
