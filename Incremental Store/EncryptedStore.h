@@ -28,6 +28,10 @@ typedef NS_ENUM(NSInteger, EncryptedStoreError)
     EncryptedStoreErrorMigrationFailed
 };
 
+@protocol EntityIDing <NSObject>
++(long)entityIDForDescription:(NSEntityDescription *)description;
+@end
+
 @interface EncryptedStore : NSIncrementalStore
 + (NSPersistentStoreCoordinator *)makeStoreWithOptions:(NSDictionary *)options managedObjectModel:(NSManagedObjectModel *)objModel;
 + (NSPersistentStoreCoordinator *)makeStoreWithStructOptions:(EncryptedStoreOptions *) options managedObjectModel:(NSManagedObjectModel *)objModel;

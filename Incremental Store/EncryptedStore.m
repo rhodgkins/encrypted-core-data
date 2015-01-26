@@ -2823,8 +2823,12 @@ static void dbsqliteRegExp(sqlite3_context *context, int argc, const char **argv
 
 -(long)typeHash
 {
-    long hash = (long)self.name.hash;
-    return hash;
+    if ([[self class] conformsToProtocol:@protocol(EntityIDing)]) {
+        return [[self class] entityIDForDescription:self];
+    } else {
+        long hash = (long)self.name.hash;
+        return hash;
+    }
 }
 
 @end
